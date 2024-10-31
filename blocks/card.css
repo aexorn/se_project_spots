@@ -2,9 +2,6 @@
 .card {
     width: 413px;
   height: 445px;
-
-  display: flex;
-  flex-direction: column;
   }
 
   .card__image{
@@ -21,15 +18,58 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 4px 0 0
+    margin: 0;
+    height: 32px;
 
   }
 
-  .card__like-button{
-    background-image: url("../images/Like\ Icon.svg");
+  .card__text{
+    max-width: 353px;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+
+  }
+
+  .card__like__button{
+    background-image: url("../images/like.svg");
     width: 23px;
     height: 20px;
     border: none;
     background-color: transparent;
     opacity: 40%;
   }
+  .card__like__button:hover{
+    background-image: url("../images/like-State=Hover.svg");  width: 23px;
+    width: 23px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+  }
+/* make animation for active state- scale and moveupwards L-R with a lil less opacity like 4 or 5 */
+  .card__like__button:active{
+        border: none;
+background-image: url("../images/like-State=OnClick.svg");
+width: 23px;
+    width: 23px;
+    height: 20px;
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .card__like__button_liked{
+    background-image: url("../images/like-State=Liked.svg");
+    width: 23px;
+    width: 23px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .card__like__button_liked:hover{ */
+    /* animation scale 1.3
+  } */

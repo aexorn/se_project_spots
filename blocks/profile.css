@@ -2,17 +2,20 @@
     font-weight: 500;
     line-height: 1;
     font-family: 'Poppins' sans-serif;
-    font-size: 16px;
-    display: flex;
-   margin: 34px auto 20px;
     max-width: 1280px;
-    padding: 0 80px;
-    /* justify-content: space-between; */
+    display: flex;
+   margin: 34px 40px 0;
 
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+
+    /* justify-content: space-between; */
 }
 
 .profile__image{
     margin-right: 20px;
+    height: 190;
+    width: 190;
 
 }
 
@@ -29,24 +32,73 @@
 
 .profile__subtitle{
     font-style: italic;
-    color: #212121 .7;
+    color: #212121;
     margin-top: 12px;
-
+  opacity: 70%;
 }
 
 
 .profile__edit-btn{
-    margin-top: auto;
-    margin-right: auto;
+  width:107.34px;
+  height: 16px;
+  margin-right: auto;
+  margin-top: auto ;
+  background-image: url("../images/edit-State=default.svg");
+  background-color: transparent;
+  opacity: 1;
+  border: none;
 
+}
+
+.profile__edit-btn:hover{
+  width:107.34px;
+  height: 16px;
+  margin-right: auto;
+  margin-top: auto ;
+  background-image: url("../images/edit-State=Hover.svg");
+  background-color: transparent;
+  opacity: 1;
+  border: none;
 }
 
 
 .profile__add-btn{
-margin-left: auto;
-margin-top: auto ;
+  width:157px;
+  height: 52px;
+  margin-left: auto;
+  margin-top: auto ;
+  background-image: url("../images/newpost-State=Default.svg");
+  background-color: transparent;
+  opacity: 1;
+  border: none;
 }
 
-/* .profile__span{
+.profile__add-btn:hover{
+  width:157px;
+  height: 52px;
+  margin-left: auto;
+  margin-top: auto ;
+  background-image: url("../images/newpost-State=Hover.svg");
+  background-color: black;
+  opacity: .7;
+  border: none;
+  border-radius:7px;
+}
 
-    border-bottom: 1px solid #212121 .4} */
+
+/* I chose 694 instead of 627 bcanything under 694 begins to cut off my new post button */
+    @media screen and (max-width: 694px){
+      .profile{
+        flex-direction: column;
+        padding-top: 20px;
+      }
+
+      .profile__image{
+        height: 104px;
+        width: 80px;
+      }
+
+      .profile__title{
+        font-size: 20px;
+      }
+    }

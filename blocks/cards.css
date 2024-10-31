@@ -3,15 +3,14 @@
     max-height: 970px; */
     max-width: 1280px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 20px 40px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+
 }
 
+
+
 .cards__list{
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap; */
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -20,22 +19,3 @@
   gap: 40px 20px;
   justify-content: center;
 }
-/*
-.card {
-  width: 413px;
-height: 445px;
-
-/* display: flex;
-flex-direction: column; */
-}
-
-/* .card__image{
-  overflow: hidden;
-  border-radius: 10px;
-  width: 413px;
-  height: 413px;
-  background-color: grey;
-}
-.card__text{
-  margin: 4px auto 0 0
-} */ */
