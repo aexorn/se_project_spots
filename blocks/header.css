@@ -1,14 +1,13 @@
-.header{
-display: flex;
-justify-content: center;
-padding: 10 0;
-background-color: #FFFFFF;
-height: 46px;
-
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10 0;
+  background-color: #ffffff;
+  height: 46px;
+  margin-bottom: 34px;
 }
 
-.header__logo{
-    width: 94px;
-    height: 26px;
-
+.header__logo {
+  width: 94px;
+  height: 26px;
 }

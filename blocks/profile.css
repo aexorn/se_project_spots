@@ -1,104 +1,80 @@
-.profile{
-    font-weight: 500;
-    line-height: 1;
-    font-family: 'Poppins' sans-serif;
-    max-width: 1280px;
-    display: flex;
-   margin: 34px 40px 0;
-
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(33, 33, 33, 0.4);
-
-    /* justify-content: space-between; */
+.profile {
+  max-width: 1280px;
+  display: flex;
+  padding-bottom: 34px 0 20px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
 
-.profile__image{
-    margin-right: 20px;
-    height: 190;
-    width: 190;
-
+.profile__image {
+  height: 190px;
+  width: 190px;
+  margin: 0 20px 20px 0;
 }
 
-.profile__column{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+.profile__column {
+  display: flex;
+  flex-direction: column;
 }
-.profile__title{
-    font-size: 32px;
-    margin: 0;
-
+.profile__title {
+  font-size: 32px;
+  margin: 0 0 12px;
 }
 
-.profile__subtitle{
-    font-style: italic;
-    color: #212121;
-    margin-top: 12px;
+.profile__subtitle {
+  font-style: italic;
+  color: #212121;
+  margin: 0;
   opacity: 70%;
 }
 
-
-.profile__edit-btn{
-  width:107.34px;
+.profile__edit-btn {
+  width: 107.34px;
   height: 16px;
   margin-right: auto;
-  margin-top: auto ;
+  margin-top: auto;
+  /* margin-bottom: 20px; */
   background-image: url("../images/edit-State=default.svg");
   background-color: transparent;
   opacity: 1;
   border: none;
-
 }
 
-.profile__edit-btn:hover{
-  width:107.34px;
-  height: 16px;
-  margin-right: auto;
-  margin-top: auto ;
+.profile__edit-btn:hover {
   background-image: url("../images/edit-State=Hover.svg");
-  background-color: transparent;
-  opacity: 1;
-  border: none;
 }
 
-
-.profile__add-btn{
-  width:157px;
+.profile__add-btn {
+  width: 157px;
   height: 52px;
   margin-left: auto;
-  margin-top: auto ;
+  margin-top: auto;
+  margin-bottom: 20px;
   background-image: url("../images/newpost-State=Default.svg");
   background-color: transparent;
   opacity: 1;
   border: none;
 }
 
-.profile__add-btn:hover{
-  width:157px;
-  height: 52px;
-  margin-left: auto;
-  margin-top: auto ;
+.profile__add-btn:hover {
   background-image: url("../images/newpost-State=Hover.svg");
   background-color: black;
-  opacity: .7;
-  border: none;
-  border-radius:7px;
+  opacity: 0.7;
+  border-radius: 7px;
 }
 
-
-/* I chose 694 instead of 627 bcanything under 694 begins to cut off my new post button */
-    @media screen and (max-width: 694px){
+/* I
+    @media screen and (max-width: ){
       .profile{
         flex-direction: column;
         padding-top: 20px;
       }
 
       .profile__image{
-        height: 104px;
+        height: 80x;
         width: 80px;
       }
 
       .profile__title{
         font-size: 20px;
       }
-    }
+    } */
