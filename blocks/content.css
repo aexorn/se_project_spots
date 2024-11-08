@@ -9,7 +9,7 @@
   padding: 0 20px;
   /* margin: 0 auto; */
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 774px) {
   .content {
     max-width: 288px;
     padding: 0;

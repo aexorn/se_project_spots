@@ -17,11 +17,11 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 774px) {
   .cards {
     max-width: 288px;
-    padding: 0;
-    margin: 20px 16px;
+    padding: 20px 16px;
+    margin: 20px auto;
   }
   .cards__list {
     gap: 20px;

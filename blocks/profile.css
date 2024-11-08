@@ -58,6 +58,7 @@
 
 .profile__add-btn:hover {
   /* background-image: url("../images/newpost-State=Hover.svg"); */
+
   background-color: rgba(33, 33, 33, 0.8);
 }
 

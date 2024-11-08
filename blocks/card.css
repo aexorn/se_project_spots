@@ -22,12 +22,14 @@
 }
 
 .card__text {
-  max-width: 353px;
-  line-height: 24px;
+  max-width: 75%;
   font-size: 20px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1;
   text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__like__button {
@@ -66,7 +68,7 @@
   .card {
     width: 288px;
     height: 318px;
-    margin-bottom: 20px;
+    margin: 0;
   }
 
   .card__image {
@@ -74,20 +76,12 @@
     height: 288px;
   }
   .card__content {
-    height: 28px;
+    height: 18px;
+    width: 100%;
+    margin-top: 12px;
   }
   .card__text {
     font-size: 16px;
     line-height: 1;
-    margin-top: 12px;
-    max-width: 195px; /*go back and do the actualmath to fix this later*/
-  }
-  .card__like__button {
-    width: 20px;
-    height: 18px;
-  }
-  .card__like__button_liked {
-    width: 20px;
-    height: 18px;
   }
 }
