@@ -1,7 +1,7 @@
 .profile {
   max-width: 1280px;
   display: flex;
-  padding-bottom: 34px 0 20px;
+  padding: 34px 0 20px;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
 
@@ -18,9 +18,11 @@
 .profile__title {
   font-size: 32px;
   margin: 0 0 12px;
+  line-height: 1;
 }
 
 .profile__subtitle {
+  line-height: 1;
   font-style: italic;
   color: #212121;
   margin: 0;
@@ -30,9 +32,7 @@
 .profile__edit-btn {
   width: 107.34px;
   height: 16px;
-  margin-right: auto;
-  margin-top: auto;
-  /* margin-bottom: 20px; */
+  margin: auto auto 20px 0;
   background-image: url("../images/edit-State=default.svg");
   background-color: transparent;
   opacity: 1;
@@ -44,37 +44,53 @@
 }
 
 .profile__add-btn {
-  width: 157px;
+  width: 149px;
   height: 52px;
+  border-radius: 8px;
   margin-left: auto;
   margin-top: auto;
   margin-bottom: 20px;
-  background-image: url("../images/newpost-State=Default.svg");
-  background-color: transparent;
-  opacity: 1;
+  /* background-image: url("../images/newpost-State=Default.svg"); */
+  color: rgba(252, 245, 229, 1);
+  background-color: rgba(33, 33, 33, 1);
   border: none;
 }
 
 .profile__add-btn:hover {
-  background-image: url("../images/newpost-State=Hover.svg");
-  background-color: black;
-  opacity: 0.7;
-  border-radius: 7px;
+  /* background-image: url("../images/newpost-State=Hover.svg"); */
+  background-color: rgba(33, 33, 33, 0.8);
 }
 
-/* I
-    @media screen and (max-width: ){
-      .profile{
-        flex-direction: column;
-        padding-top: 20px;
-      }
+@media screen and (max-width: 774px) {
+  .profile {
+    max-width: 288px;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
 
-      .profile__image{
-        height: 80x;
-        width: 80px;
-      }
+  .profile__image {
+    height: 80px;
+    width: 80px;
+    margin: 0 0 12px;
+  }
 
-      .profile__title{
-        font-size: 20px;
-      }
-    } */
+  .profile__title {
+    font-size: 20px;
+    margin: 0;
+  }
+  .profile__subtitle {
+    margin: 6px 0 0;
+  }
+  .profile__column {
+    margin: 0 0 20px;
+  }
+  .profile__edit-btn {
+    margin: 32px auto 0;
+  }
+  .profile__add-btn {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
