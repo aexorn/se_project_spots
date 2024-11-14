@@ -1,3 +1,16 @@
+@keyframes grow-heart {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  50% { scale 1.5}
+  85% {scale: 2;}
+  100% {
+    opacity: 0;
+  }
+
+}
+
 .card {
   width: 413px;
   height: 445px;
@@ -43,11 +56,13 @@
 .card__like__button:hover {
   background-image: url("../images/like-State=Hover.svg");
   opacity: 1;
+
 }
-/* make animation for active state- scale and moveupwards L-R with a lil less opacity like 4 or 5 */
+/*when we start doing js make animation for on click event- scale 1.5 and moveupwards L-R with a lil less opacity like 4 or 5 */
 .card__like__button:active {
   background-image: url("../images/like-State=OnClick.svg");
   opacity: 1;
+  animation: grow-heart 1s ease;
 }
 
 .card__like__button_liked {
