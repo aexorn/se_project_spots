@@ -54,17 +54,17 @@
   opacity: 40%;
 }
 .card__like__button:hover {
-  background-image: url("../images/like-State=Hover.svg");
+  background-image: url("../images/like-State=OnClick.svg");
   opacity: 1;
 
 }
-/*when we start doing js make animation for on click event- scale 1.5 and moveupwards L-R with a lil less opacity like 4 or 5 */
+/*change this to cick event listener when js is legal*/
 .card__like__button:active {
   background-image: url("../images/like-State=OnClick.svg");
   opacity: 1;
-  animation: grow-heart 1s ease;
+  animation: grow-heart 2.5s ease;
 }
-
+/*
 .card__like__button_liked {
   background-image: url("../images/like-State=Liked.svg");
   width: 23px;
@@ -76,7 +76,7 @@
 }
 
 /* .card__like__button_liked:hover{
-    /* animation scale 1.3
+    /* animation scale 1.5
   }  */
 
 @media screen and (max-width: 774px) {
