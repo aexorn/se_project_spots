@@ -1,9 +1,8 @@
 .header {
   display: flex;
   justify-content: center;
-  padding: 10 0;
+  padding: 10px 0;
   background-color: #ffffff;
-  height: 46px;
   margin-bottom: 34px;
 }
 
