@@ -3,11 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 60px 0;
+  margin: 0 80px;
 }
 
 .footer__copyright {
   opacity: 70%;
-  margin: 60px auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 774px) {
@@ -15,5 +17,9 @@
     margin: 20px 0;
     padding: 20px 16px;
     max-width: 288px;
+  }
+
+  .footer__copyright {
+    margin: 20px auto;
   }
 }
