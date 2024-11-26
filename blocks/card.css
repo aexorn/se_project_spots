@@ -42,11 +42,14 @@
   max-width: 75%;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+.card__text:hover {
+  overflow: visible;
 }
 /*on gh pages my like button displays properly on all cards but from liveServer the third card displays it on a different line and I don't understand why*/
 .card__like-button {
