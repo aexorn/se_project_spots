@@ -48,22 +48,23 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
-.card__like__button {
-  background-image: url("../images/like.svg");
+/*on gh pages my like button displays properly on all cards but from liveServer the third card displays it on a different line and I don't understand why*/
+.card__like-button {
+  background-image: url("../images/like-State=Hover.svg"); /*img src="../images/figma_like_appears_gray.PNG" ? */
   width: 23px;
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  background: cover;
   cursor: pointer;
 }
-.card__like__button:hover {
-  background-image: url("../images/like-State=Hover.svg");
+/*.card__like-button:hover {
+  background-image: url("..images/like.svg");
   opacity: 1;
-}
+}*/
+
 /*change this to cick event listener when js is legal*/
-.card__like__button:active {
+.card__like-button:active {
   background-image: url("../images/like-State=OnClick.svg");
   opacity: 1;
   animation: grow-heart 2.5s ease;
@@ -99,14 +100,5 @@
   .card__content {
     width: 100%;
     margin-top: 12px;
-  }
-  .card__text {
-    margin: 0;
-    max-width: 75%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
   }
 }
