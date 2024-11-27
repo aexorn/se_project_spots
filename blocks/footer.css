@@ -11,20 +11,3 @@
   opacity: 70%;
   margin: 0 auto;
 }
-
-@media screen and (max-width: 1438px) {
-  .footer {
-    max-width: 875px;
-  }
-
-@media screen and (max-width: 774px) {
-  .footer {
-    margin: 20px auto;
-    padding: 20px 16px;
-    max-width: 288px;
-  }
-
-  .footer__copyright {
-    margin: 20px auto;
-  }
-}
