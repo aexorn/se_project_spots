@@ -36,7 +36,7 @@
             class="profile__image"
           />
           <div class="profile__column">
-            <h1 class="profile__title">Bessie Coleman</h1>
+            <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__subtitle">Civil Aviator</p>
 
             <button class="profile__edit-btn" type="button"></button>
@@ -48,110 +48,41 @@
 
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="a monitor in darkened room displays
-                      an image of a snow covered cabin in the mountains"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels-min.jpg"
-                alt="flowers grow around the edges of the dark green awning of a restaurant
-                              on a cobbled street corner while the patio seating below sits empty on an overcast day"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Restaurant Terrace</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels-min.jpg"
-                alt="from above we see people gathered around folding black tables in a bustling intimate outdoor patio space"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">An Outdoor Cafe</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels-min.jpg"
-                alt="a bridge narrows as it sprawls into the mass of treetops that dominate the rest of the
-                                  frame with green foliage just beginning to twinge orange with the season"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">
-                  A very long bridge over the forest canopy
-                </h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels-min.jpg"
-                alt="extending into the frame for what feels like a great distance, an impressively high wood ceilinged tunnel lets cool morning light flood in the windows that
-                                            make up both its sides. "
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel with morning light</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels-min.jpg"
-                alt="a snow storm whips around an isolate rustic and weather worn cabin which is in stark contrast
-                                          to the tall, powder caked aspens in the background"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain House</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
+            <template id="card-template">
+              <li class="card">
+                <img src="" alt="" class="card__image" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button type="button" class="card__like-button"></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">2024 &copy; Spots</p>
       </footer>
-      <div class="modal modal_opened">
+      <div class="modal" id="edit-modal">
         <div class="modal__container">
           <button type="submit" class="modal__close-btn">
             <img src="images/Close Icon.svg" class="modal__close-btn__icon" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form">
-            <label for="name" class="modal__label">
+            <label for="profile-name-input" class="modal__label">
               Name
               <input
-                id="name"
+                id="profile-name-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
               />
             </label>
-            <label for="description" class="modal__label">
+            <label for="profile-description-input" class="modal__label">
               Description
               <input
-                id="description"
+                id="profile-description-input"
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
