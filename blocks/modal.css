@@ -95,15 +95,19 @@
 @media screen and (max-width: 774px) {
   .modal {
     padding: 0 20px;
+    top: 25px;
+    left: 102px;
   }
 
   .modal__container {
-    max-width: 300px;
+    height: 336px;
+    width: 300px;
     padding: 22px 12px 12px;
+    gap: 24px;
   }
   .modal__title {
     font-size: 20px;
-    margin: 12px 0 24px;
+    margin: 0;
   }
   .modal__btn_submit {
     height: 52px;
@@ -111,18 +115,22 @@
   }
   .modal__label {
     margin-bottom: 0px;
-    margin-top: 12px;
+
   }
   .modal__input {
     height: 48px;
     border-radius: 8px;
     font-size: 16px;
     margin-top: 8px;
-    margin-bottom: 12px;
-    padding: 0;
+    margin-bottom: 24px;
+    padding-left: 12px;
+  }
+  .modal__btn_close{
+    top: 10px;
+    right: 10px;
   }
   .modal__icon_btn_close {
     position: relative;
-    right: 40px;
+    right: 5px;
   }
 }
