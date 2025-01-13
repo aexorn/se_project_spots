@@ -44,7 +44,7 @@ const editModalDescriptionInput = editModal.querySelector(
 );
 
 const cardTemplate = document.querySelector("#card-template");
-const cardList = document.querySelector(".cards__list");
+const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
   console.log(data);
@@ -78,5 +78,5 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 for (i = 0; i < initialCards.length; i++) {
   const card = getCardElement(initialCards[i]);
-  cardList.prepend(card);
+  cardsList.prepend(card);
 }
