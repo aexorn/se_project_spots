@@ -31,13 +31,13 @@ const initialCards = [
   },
 ];
 
-const profileEditBtn = document.querySelector(".profile__btn_edit");
-const profileName = document.querySelector(".profile__name");
+const profileEditBtn = document.querySelector(".profile__edit");
+const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__subtitle");
 
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector(".modal__form");
-const editModalCloseBtn = editModal.querySelector(".modal__btn_close");
+const editModalCloseBtn = editModal.querySelector(".modal__close");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"

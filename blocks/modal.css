@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
-  top: 205px;
-  left: 398px;
+  top: 0px;
+  left: 0px;
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -80,10 +80,15 @@
   cursor: pointer;
 }
 
-modal__close {
-  background: url(../images/Close-Icon.svg)
+.modal__close {
   cursor: pointer;
-  position: relative;
+  position: abolute;
+  top: 32px;
+  right: 54px;
+
+  .modal__close__img
+  height: 40px;
+  width: 40px;
 }
 
 .modal__submit:hover {
