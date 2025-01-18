@@ -49,9 +49,10 @@ const cardList = document.querySelector(".cards__list");
 function getCardElement(data) {
   console.log(data);
   const card = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardImg = card.querySelector(".card__image");
   card.querySelector(".card__title").textContent = data.name;
-  card.querySelector(".card__image").src = data.link;
-  card.querySelector(".card__image").alt = data.alt;
+  cardImg.src = data.link;
+  cardImg.alt = data.alt;
   return card;
 }
 
