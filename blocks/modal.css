@@ -97,6 +97,7 @@
 
 .modal__close:hover {
   background-image: url(../images/close-hover.svg);
+  left: 3px;
 }
 
 @media screen and (max-width: 774px) {
