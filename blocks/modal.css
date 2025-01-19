@@ -36,7 +36,7 @@
 .modal__close{
   position: absolute;
   top: 32px;
-  right: 50px;
+  right: 53px;
   width: 40px;
   height: 40px;
   border: none;
@@ -97,8 +97,7 @@
 
 .modal__close:hover {
   background-image: url(../images/close-hover.svg);
-  position absolute
-  right:47px;
+
 }
 
 @media screen and (max-width: 774px) {
