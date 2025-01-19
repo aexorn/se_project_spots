@@ -40,16 +40,16 @@
   width: 40px;
   height: 40px;
   border: none;
-  background: url("../images/close.svg");
+  /* background: url("../images/close.svg"); */
   cursor: pointer;
 }
-/* .modal__close__img {
+.modal__close__img {
   position: relative;
   top: -1px;
   left: -6.5px;
   height: 40px;
   width: 40px;
-} */
+}
 
 .modal__title {
   margin: 0;
