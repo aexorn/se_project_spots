@@ -47,7 +47,7 @@
   height: 16px;
   margin-top: auto;
   background-image: url("../images/edit-State=default.svg");
-  background-color: none;
+  background-color: transparent;
   opacity: 0.7;
   border: none;
   cursor: pointer;
