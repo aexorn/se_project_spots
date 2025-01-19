@@ -87,11 +87,6 @@
   cursor: pointer;
 }
 
-/* .modal__close {
-  cursor: pointer;
-  position: abolute;
-  top: 32px;
-  right: 54px; */
 
 
 
@@ -121,7 +116,7 @@
     font-size: 20px;
     margin: 0;
   }
-  .modal__btn_submit {
+  .modal__submit {
     height: 52px;
     width: 100%;
     cursor: pointer;
