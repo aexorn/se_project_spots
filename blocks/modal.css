@@ -39,9 +39,15 @@
   right: 53px;
   width: 40px;
   height: 40px;
+  /* opacity: .7; */
   border: none;
-  background: url("../images/close.svg");
+  background-image: url("../images/close-Icon.svg");
+  background-color: transparent;
   cursor: pointer;
+}
+
+.modal__close:hover{
+  background-image: url("../images/close-hover.svg");
 }
 /* .modal__close__img {
   position: relative;
@@ -95,8 +101,8 @@
 }
 
 
-.modal__close:hover {
-  background-image: url(../images/close-hover.svg);
+/* .modal__close:hover {
+  background-image: url(../images/close-hover.svg); */
 
 }
 
@@ -139,10 +145,7 @@
     right: 10px;
     cursor: pointer;
   }
-  .modal__close__img {
-    position: relative;
-    right: 5px;
-  }
+
 
 
 }
@@ -150,7 +153,31 @@
   .modal__container{
     width: 300px;
     height: 336px;
-    top: -902px;
+    top: 12px;
+    right: 12px;
+    margin: 134px 10px;
+    padding: 12px;
+    gap: 24px;
   }
 
+  .modal__close{
+    top: 0;
+    right: 12px;
+    height: 32px;
+    width: 32px;
+  }
+
+  .modal__title{
+    font-size: 20px;
+    margin-top: 10;
+  }
+
+  .modal__input{
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+.modal__submit{
+  margin-bottom: 12px;
+  width: 100%;
+}
 }
