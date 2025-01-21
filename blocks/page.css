@@ -28,8 +28,9 @@
 }
 
 @media screen and (max-width: 320px) {
-  width: 320px;
-  height: 604px;
+
+.page{
   margin: auto;
-  padding: 132px 10px
+  padding: 0 10px;
+}
 }

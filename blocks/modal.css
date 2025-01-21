@@ -104,7 +104,7 @@
 /* .modal__close:hover {
   background-image: url(../images/close-hover.svg); */
 
-}
+
 
 @media screen and (max-width: 774px) {
   .modal {
@@ -150,12 +150,12 @@
 
 }
 @media screen and (max-width: 320px) {
+  .modal{
+    padding: 0;
+  }
   .modal__container{
     width: 300px;
-    height: 336px;
-    top: 0;
-    right: 0;
-    margin: auto;
+    height: fit-content;
     padding: 12px;
     gap: 24px;
   }
@@ -169,15 +169,17 @@
 
   .modal__title{
     font-size: 20px;
-    margin-top: 10;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .modal__input{
+    height: 48px;
     margin-bottom: 24px;
     font-size: 16px;
   }
 .modal__submit{
-  margin-bottom: 12px;
+  margin-bottom: 0px;
   width: 100%;
 }
 }

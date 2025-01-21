@@ -79,5 +79,5 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 for (i = 0; i < initialCards.length; i++) {
   const card = getCardElement(initialCards[i]);
-  cardList.prepend(card);
+  cardList.append(card);
 }
