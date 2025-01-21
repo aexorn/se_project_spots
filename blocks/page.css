@@ -26,3 +26,10 @@
     max-width: 288px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  width: 320px;
+  height: 604px;
+  margin: auto;
+  padding: 132px 10px
+}
