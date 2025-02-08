@@ -80,11 +80,22 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 //function to apply user input on PROFILE EDIT form to profile
-function handleEditFormSubmit(evt) {
+function editFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
   closeModal(editModal);
+}
+
+function newPostSubmit(evt){
+  evt.preventDefault();
+  const newPostInputs = {
+    name: newPostCaptionInput.value,
+    link: newPostURLInput.value
+    }
+    const newPost = getCardElement(newPostInputs);
+    cardList.prepend(newPost);
+    closeModal(newPostModal);
 }
 
 
@@ -98,7 +109,8 @@ profileEditBtn.addEventListener("click", () =>{
 editModalCloseBtn.addEventListener("click", () => {
   closeModal(editModal);
 });
-editForm.addEventListener("submit", handleEditFormSubmit);
+editForm.addEventListener("submit", editFormSubmit);
+
 //event listeners for new post
 newPostBtn.addEventListener("click", () => {
   openModal(newPostModal);
@@ -107,16 +119,8 @@ newPostBtn.addEventListener("click", () => {
 newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
 });
-newPostForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  const newCard = getCardElement({
-    name: newPostCaptionInput.value,
-    link: newPostURLInput.value,
-    alt: newPostCaptionInput.value
-  });
-  cardList.prepend(card);
-  closeModal(newPostModal);
-});
+
+newPostForm.addEventListener("submit", newPostSubmit);
 
 // for (i = 0; i < initialCards.length; i++) {
 //   const card = getCardElement(initialCards[i]);
