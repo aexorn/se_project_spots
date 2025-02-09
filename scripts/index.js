@@ -49,6 +49,13 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close");
 const newPostForm= newPostModal.querySelector(".modal__form");
 const newPostCaptionInput = newPostModal.querySelector("#new-caption-input");
 const newPostURLInput = newPostModal.querySelector("#new-image-input");
+//for cards
+
+
+// const previewModal = document.querySelector("#preview-modal");
+// const previewCloseBtn = previewModal.querySelector(".modal__close");
+
+
 //function to generate cards according to template id'd 'card-template
 function getCardElement(data) {
   console.log(data);
@@ -57,22 +64,26 @@ function getCardElement(data) {
   card.querySelector(".card__title").textContent = data.name;
   cardImg.src = data.link;
   cardImg.alt = data.name;
+  const likeBtn = card.querySelector(".card__like");
+  likeBtn.addEventListener("click", () => {
+  likeBtn.classList.toggle("card__like_liked");
+  });
+  const deleteBtn = card.querySelector(".card__delete");
+  deleteBtn.addEventListener("click", () => {
+    // alert("are you sure you want to delete this post?");
+    // if(confirm("are you sure you want to delete this post?")){
+   card.remove();
+//     }
+//     else{
+//       return;
+//     }
+//  })
+  });
+
   return card;
 }
-// function addNewPost(userInput) {
-//   console.log(data);
-//   const card = cardTemplate.content.querySelector(".card").cloneNode(true);
-//   const cardImg = card.querySelector(".card__image");
-//   card.querySelector(".card__title").textContent = newPostCaptionInput.value;
-//   cardImg.src = newPostURLInput.value;
-//   cardImg.alt = newPostCaptionInput.value;
-//   cardList.prepend(card);
-// // }
-// function addNewPost(userInput) {
-//   data.name = newPostCaptionInput.value;
-//   data.link = newPostURLInput.value;
-// }
 
+//general modal functions
 function openModal(modal){
 modal.classList.add("modal_opened");
 }
@@ -86,7 +97,7 @@ function editFormSubmit(evt) {
   profileDescription.textContent = editModalDescriptionInput.value;
   closeModal(editModal);
 }
-
+//function to apply user input on NEW POST form
 function newPostSubmit(evt){
   evt.preventDefault();
   const newPostInputs = {
@@ -97,6 +108,7 @@ function newPostSubmit(evt){
     cardList.prepend(newPost);
     closeModal(newPostModal);
 }
+//function for card
 
 
 
@@ -122,12 +134,14 @@ newPostCloseBtn.addEventListener("click", () => {
 
 newPostForm.addEventListener("submit", newPostSubmit);
 
-// for (i = 0; i < initialCards.length; i++) {
-//   const card = getCardElement(initialCards[i]);
-//   cardList.append(card);
-// }
-//rewritten with forEach():
-initialCards.forEach(cardItem => {
+//event listeners for cards
+
+
+// card.addEventListener("click", () => {
+//   openModal(previewModal);
+// });
+
+initialCards.forEach((cardItem )=> {
   const card = getCardElement(cardItem);
   cardList.append(card);
 });

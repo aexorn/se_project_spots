@@ -3,10 +3,10 @@
     opacity: 1;
     transform: scale(1);
   }
-  50% {
+/* 25% {
     transform: scale(1.5);
-  }
-  85% {
+  } */
+  90% {
     transform: scale(2);
   }
   100% {
@@ -29,6 +29,19 @@
   display: block;
   margin-bottom: 12px;
 }
+
+.card__delete{
+  background: url('../images/delete-icon.svg');
+  height: 32px;
+  width: 32px;
+  top: 42px;
+  left: 372px;
+  position: relative;
+}
+/* .card__image:hover {
+Width: 446.43px;
+Height: 661px;
+} */
 
 .card__content {
   display: flex;
@@ -73,10 +86,10 @@
 .card__like:active {
   background-image: url("../images/like-State=OnClick.svg");
   opacity: 1;
-  animation: grow-heart 2.5s ease;
+
 }
-/*
-.card__btn_like_liked {
+
+.card__like_liked {
   background-image: url("../images/like-State=Liked.svg");
   width: 23px;
   width: 23px;
@@ -84,11 +97,12 @@
   border: none;
   background-color: transparent;
   opacity: 1;
+  animation: grow-heart 1s 1 ease;
 }
 
-/* .card__btn_like_liked:hover{
-    /* animation scale 1.5
-  }  */
+.card__like_liked:hover{
+   animation: scale 1.5
+  }
 
 @media screen and (max-width: 774px) {
   .card {
@@ -124,6 +138,11 @@
   .card {
     width: 288px;
     height: 318px;
+  }
+
+  .card__delete{
+    top: 41px;
+    left: 246px;
   }
 
   .card__image {
