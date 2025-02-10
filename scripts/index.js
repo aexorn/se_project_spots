@@ -40,8 +40,7 @@ const editForm = editModal.querySelector(".modal__form");
 const editModalCloseBtn = editModal.querySelector(".modal__close");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector("#profile-description-input");
-const cardTemplate = document.querySelector("#card-template");
-const cardList = document.querySelector(".cards__list");
+
 //for new post modal
 const newPostBtn = document.querySelector(".profile__add-new");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -49,12 +48,15 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close");
 const newPostForm= newPostModal.querySelector(".modal__form");
 const newPostCaptionInput = newPostModal.querySelector("#new-caption-input");
 const newPostURLInput = newPostModal.querySelector("#new-image-input");
-//for cards
-
-
-// const previewModal = document.querySelector("#preview-modal");
-// const previewCloseBtn = previewModal.querySelector(".modal__close");
-
+//for preview modal
+const previewModal = document.querySelector("#preview-modal");
+const previewCloseBtn = previewModal.querySelector(".modal__close_preview");
+const previewImg = previewModal.querySelector(".modal__image");
+const previewCaption = previewModal.querySelector(".modal__caption");
+//for card
+const cardTemplate = document.querySelector("#card-template");
+const cardList = document.querySelector(".cards__list");
+const card = document.querySelector(".card");
 
 //function to generate cards according to template id'd 'card-template
 function getCardElement(data) {
@@ -64,20 +66,21 @@ function getCardElement(data) {
   card.querySelector(".card__title").textContent = data.name;
   cardImg.src = data.link;
   cardImg.alt = data.name;
+  cardImg.addEventListener("click", () => {
+    openModal(previewModal);
+    previewImg.src = data.link;
+    previewImg.alt = data.name;
+    previewCaption.textContent = data.name;
+  });
   const likeBtn = card.querySelector(".card__like");
   likeBtn.addEventListener("click", () => {
-  likeBtn.classList.toggle("card__like_liked");
+    likeBtn.classList.toggle("card__like_liked");
   });
   const deleteBtn = card.querySelector(".card__delete");
   deleteBtn.addEventListener("click", () => {
-    // alert("are you sure you want to delete this post?");
-    // if(confirm("are you sure you want to delete this post?")){
+
    card.remove();
-//     }
-//     else{
-//       return;
-//     }
-//  })
+
   });
 
   return card;
@@ -108,9 +111,6 @@ function newPostSubmit(evt){
     cardList.prepend(newPost);
     closeModal(newPostModal);
 }
-//function for card
-
-
 
 //event listeners for profile edit
 profileEditBtn.addEventListener("click", () =>{
@@ -133,13 +133,11 @@ newPostCloseBtn.addEventListener("click", () => {
 });
 
 newPostForm.addEventListener("submit", newPostSubmit);
+//event listeners for preview modal
 
-//event listeners for cards
-
-
-// card.addEventListener("click", () => {
-//   openModal(previewModal);
-// });
+previewCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+})
 
 initialCards.forEach((cardItem )=> {
   const card = getCardElement(cardItem);

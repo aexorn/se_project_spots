@@ -1,4 +1,4 @@
-@keyframes slowOpen{
+@keyframes fadeIn{
   from {
   opacity: 0;
   visibility: hidden;
@@ -9,7 +9,7 @@ to {
 }
 }
 
-@keyframes slowClose{
+@keyframes fadeOut{
   from {
   opacity: 1;
   visibility: visible;
@@ -36,7 +36,7 @@ to {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1;
-  
+
 }
 
 .modal_opened {
@@ -54,38 +54,56 @@ to {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 32px;
 }
+
+.modal__container_preview{
+  width: 100%;
+  height:auto
+  /* width: fit-content; */
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+
 .modal__close{
   position: absolute;
   top: 32px;
   right: 53px;
   width: 40px;
   height: 40px;
-  /* opacity: .7; */
   border: none;
   background-image: url("../images/close-Icon.svg");
   background-color: transparent;
   cursor: pointer;
 }
 
+.modal__close_preview{
+  background: url("../images/close-preview.svg");
+  top: 0;
+  right: -52.5px;
+}
 .modal__close:hover{
   background-image: url("../images/close-hover.svg");
 }
-/* .modal__close__img {
-  position: relative;
-  top: -1px;
-  left: -6.5px;
-  height: 40px;
-  width: 40px;
-} */
-
+modal__image{
+  width: fit-content;
+  object-fit: contain;
+  max-width: 80vw;
+  max-height: 80vh;
+}
 .modal__title {
   margin: 0;
   font-size: 32px;
 }
 
+.modal__caption{
+  background-color: transparent;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+}
 .modal__label {
   display: flex;
   flex-direction: column;

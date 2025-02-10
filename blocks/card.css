@@ -28,6 +28,7 @@
   object-fit: cover;
   display: block;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .card__delete{
@@ -37,6 +38,7 @@
   top: 42px;
   left: 372px;
   position: relative;
+  cursor: pointer;
 }
 /* .card__image:hover {
 Width: 446.43px;
@@ -103,7 +105,13 @@ Height: 661px;
 .card__like_liked:hover{
    animation: scale 1.5
   }
+@media screen and (max-width: 1005px) {
+  .card__delete{
+    top: 41px;
+    left: 371px;
+  }
 
+}
 @media screen and (max-width: 774px) {
   .card {
     margin: 0;
@@ -113,7 +121,10 @@ Height: 661px;
     line-height: 1;
     font-weight: 500;
   }
-
+.card__delete{
+left: 246px;
+top: 41px;
+}
   .card__image {
     width: 288px;
     height: 288px;
@@ -141,8 +152,8 @@ Height: 661px;
   }
 
   .card__delete{
-    top: 41px;
-    left: 246px;
+    top: 42px;
+    left: 247px;
   }
 
   .card__image {
