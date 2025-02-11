@@ -58,12 +58,19 @@ to {
 }
 
 .modal__container_preview{
-  width: 100%;
-  height:auto
-  /* width: fit-content; */
+  width: auto;
+  height:auto;
   border-radius: 8px;
   padding: 0;
   overflow: hidden;
+  background-color: transparent;
+}
+
+.modal__image{
+  width: 100%;
+  object-fit: contain;
+  max-width: 80vw;
+  max-height: 80vh;
 }
 
 .modal__close{
@@ -86,12 +93,7 @@ to {
 .modal__close:hover{
   background-image: url("../images/close-hover.svg");
 }
-modal__image{
-  width: fit-content;
-  object-fit: contain;
-  max-width: 80vw;
-  max-height: 80vh;
-}
+
 .modal__title {
   margin: 0;
   font-size: 32px;
