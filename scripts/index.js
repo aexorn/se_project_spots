@@ -58,7 +58,7 @@ const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 const card = document.querySelector(".card");
 
-//function to generate cards according to template id'd 'card-template
+//function to generate cards according to template id'd 'card-template'
 function getCardElement(data) {
   console.log(data);
   const card = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -89,9 +89,13 @@ function getCardElement(data) {
 //general modal functions
 function openModal(modal){
 modal.classList.add("modal_opened");
+modal.classList.add("modal__fade-in");
 }
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  modal.classList.remove("modal__fade-in");
+  modal.classList.add("modal__fade-out");
+
 }
 //function to apply user input on PROFILE EDIT form to profile
 function editFormSubmit(evt) {
@@ -119,6 +123,7 @@ profileEditBtn.addEventListener("click", () =>{
   openModal(editModal);
 });
 editModalCloseBtn.addEventListener("click", () => {
+  editModal.classList.add("modal__fade-out");
   closeModal(editModal);
 });
 editForm.addEventListener("submit", editFormSubmit);
@@ -129,6 +134,8 @@ newPostBtn.addEventListener("click", () => {
 });
 
 newPostCloseBtn.addEventListener("click", () => {
+  newPostModal.classList.add("modal__fade-out");
+
   closeModal(newPostModal);
 });
 
@@ -136,9 +143,10 @@ newPostForm.addEventListener("submit", newPostSubmit);
 //event listeners for preview modal
 
 previewCloseBtn.addEventListener("click", () => {
+  previewModal.classList.add("modal__fade-out");
   closeModal(previewModal);
 })
-
+//runs on page load
 initialCards.forEach((cardItem )=> {
   const card = getCardElement(cardItem);
   cardList.append(card);

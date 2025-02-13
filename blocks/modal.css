@@ -1,24 +1,25 @@
 @keyframes fadeIn{
-  from {
-  opacity: 0;
-  visibility: hidden;
-}
-to {
-  opacity: 1;
-  visibility: visible;
-}
+  0%   {opacity: 0;
+  visibility: hidden;}
+  25%  {opacity: 0.25;
+    visibility: visible;}
+  50%  {opacity: 0.5;}
+  75%  {opacity: 0.75;}
+  100% {opacity: 1;
+  }
 }
 
 @keyframes fadeOut{
-  from {
-  opacity: 1;
-  visibility: visible;
+  0%   {opacity: 1;
+    visibility: visible;}
+    25%  {opacity: 0.75;
+      visibility: visible;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.25;}
+    100% {opacity: 0;
+      visibility: hidden;}
 }
-to {
-  opacity: 0;
-  visibility: hidden;
-}
-}
+
 
 
 .modal {
@@ -36,59 +37,78 @@ to {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1;
-
+  opacity: 0;
+  transition: opacity 1s linear;
 }
 
 .modal_opened {
   visibility: visible;
-}
+  opacity: 1;
 
+}
+.modal__fade-out{
+  animation: fadeOut 1s linear;
+  animation-fill-mode: forwards;
+}
+.modal__fade-in{
+  animation: fadeIn 1s linear;
+  animation-fill-mode: forwards;
+}
 .modal__container {
   background: rgba(255, 255, 255, 1);
   padding: 32px 50px;
   height: 408px;
   max-width: 730px;
-  position: relative;
   box-sizing: border-box;
   width: 100%;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
 
+}
 .modal__container_preview{
-  width: auto;
-  height:auto;
-  border-radius: 8px;
+  height: auto;
   padding: 0;
-  overflow: hidden;
   background-color: transparent;
+  position: relative;
+  gap: unset;
+  display: inline-block;
+  flex-direction: unset;
+  width: 100%;
+  margin: 0;
+  box-sizing: content-box;
 }
-
 .modal__image{
   width: 100%;
-  object-fit: contain;
+  height: 100%;;
+  /* object-fit: contain; */
   max-width: 80vw;
   max-height: 80vh;
+  border-radius: 8px;
+  position: relative;
 }
 
 .modal__close{
   position: absolute;
-  top: 32px;
-  right: 53px;
+  top: 304px;
+  right: 629px;
   width: 40px;
   height: 40px;
   border: none;
   background-image: url("../images/close-Icon.svg");
   background-color: transparent;
   cursor: pointer;
+
 }
 
 .modal__close_preview{
   background: url("../images/close-preview.svg");
   top: 0;
-  right: -52.5px;
+  right: -45px;
+
+
+
 }
 .modal__close:hover{
   background-image: url("../images/close-hover.svg");
@@ -100,11 +120,23 @@ to {
 }
 
 .modal__caption{
-  background-color: transparent;
+  background-color: rgba(33, 33, 33, 1);
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  display: inline;
+  padding: 4px 8px;
+  bottom: -35px;
+  left: 0px;
+  position: absolute;
+  margin: 0;
 }
 .modal__label {
   display: flex;
