@@ -74,6 +74,7 @@ function getCardElement(data) {
   });
   const likeBtn = card.querySelector(".card__like");
   likeBtn.addEventListener("click", () => {
+    likeBtn.classList.toggle("card__like");
     likeBtn.classList.toggle("card__like_liked");
   });
   const deleteBtn = card.querySelector(".card__delete");

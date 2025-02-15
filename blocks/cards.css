@@ -24,8 +24,21 @@
     gap: 20px;
   }
 }
+@media screen and (max-width: 1005px) {
+  .cards {9005
 
+
+}
 @media screen and (max-width: 774px) {
+  .cards {
+    max-width: 742;
+  }
+  .cards__list {
+    grid-template-columns: 288px 288px;
+  }
+}
+
+@media screen and (max-width: 637px) {
   .cards {
     max-width: 288px;
     padding: 20px 16px;
@@ -33,6 +46,6 @@
   }
   .cards__list {
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, 288px);
+    grid-template-columns: 288px;
   }
 }

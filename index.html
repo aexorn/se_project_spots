@@ -48,7 +48,7 @@
 
         <section class="cards page__section">
           <ul class="cards__list">
-            <template id="card-template">
+            <template id="card-template" class="card-template">
               <li class="card">
                 <button class="card__delete"></button>
                 <img src="" alt="" class="card__image" />
@@ -103,23 +103,23 @@
             </button>
               <h2 class="modal__title">New Post</h2>
           <form name="new-post" class="modal__form">
-            <label for="new-image-url" class="modal__label">
+            <label for="new-image-input" class="modal__label">
               image link
               <input
                 id="new-image-input"
                 type="url"
                 class="modal__input"
-                name="new-image-url"
+                name="new-image-input"
                 placeholder="https://example.com/image.jpg"
               />
             </label>
-            <label for="new-image-caption" class="modal__label">
+            <label for="new-image-caption-input" class="modal__label">
               Caption
               <input
-                id="new-caption-input"
+                id="new-image-caption-input"
                 type="text"
                 class="modal__input"
-                name="new-image-caption"
+                name="new-image-caption-input"
                 placeholder="tell us about your image"
               />
             </label>
@@ -129,14 +129,15 @@
         </div>
         <!--end new post modal -->
         <div class="modal" id="preview-modal">
-
           <div class="modal__container modal__container_preview">
             <button class="modal__close modal__close_preview">
             </button>
             <img src="" alt="" class="modal__image">
+
             <p class="modal__caption"></p>
           </div>
         </div>
+    </div>
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>

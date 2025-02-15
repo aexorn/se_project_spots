@@ -13,7 +13,14 @@
     opacity: 0;
   }
 }
-
+@keyframes hover-heart {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.5);
+  }
+}
 .card {
   width: 100%;
   height: 445px;
@@ -39,6 +46,9 @@
   left: 372px;
   position: relative;
   cursor: pointer;
+}
+.card__delete:hover{
+  background: url('../images/delete-hover.svg');
 }
 /* .card__image:hover {
 Width: 446.43px;
@@ -82,6 +92,7 @@ Height: 661px;
 }
 .card__like:hover {
   opacity: 1;
+  animation: hover-heart 1s 1 ease-in-out;
 }
 
 /*change this to cick event listener when js is legal*/
@@ -100,10 +111,11 @@ Height: 661px;
   background-color: transparent;
   opacity: 1;
   animation: grow-heart 1s 1 ease;
+  cursor: pointer;
 }
 
 .card__like_liked:hover{
-   animation: scale 1.5
+transition: scale(1.25) 1s 1 ease-in-out;
   }
 @media screen and (max-width: 1005px) {
   .card__delete{
@@ -162,3 +174,9 @@ top: 41px;
   }
 
 }
+ @media screen and (max-width: 320px) {
+  .modal{
+    padding: auto 16px;
+  }
+
+ }
