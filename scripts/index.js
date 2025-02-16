@@ -31,32 +31,32 @@ const initialCards = [
   },
 ];
 //variable declarations in GLOBAL scope
+// const closeModalBtn = document.querySelector(".modal__close");
 //for edit modal
 const profileEditBtn = document.querySelector(".profile__edit");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__subtitle");
 const editModal = document.querySelector("#edit-modal");
 const editForm = editModal.querySelector(".modal__form");
-const editModalCloseBtn = editModal.querySelector(".modal__close");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector("#profile-description-input");
-
+const editModalCloseBtn = editModal.querySelector(".modal__close");
 //for new post modal
 const newPostBtn = document.querySelector(".profile__add-new");
 const newPostModal = document.querySelector("#new-post-modal");
-const newPostCloseBtn = newPostModal.querySelector(".modal__close");
 const newPostForm= newPostModal.querySelector(".modal__form");
 const newPostCaptionInput = newPostModal.querySelector("#new-caption-input");
 const newPostURLInput = newPostModal.querySelector("#new-image-input");
+const newPostCloseBtn = newPostModal.querySelector(".modal__close");
 //for preview modal
 const previewModal = document.querySelector("#preview-modal");
-const previewCloseBtn = previewModal.querySelector(".modal__close_preview");
 const previewImg = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
+const previewCloseBtn = previewModal.querySelector(".modal__close_preview");
 //for card
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
-const card = document.querySelector(".card");
+
 
 //function to generate cards according to template id'd 'card-template'
 function getCardElement(data) {
@@ -90,13 +90,9 @@ function getCardElement(data) {
 //general modal functions
 function openModal(modal){
 modal.classList.add("modal_opened");
-modal.classList.add("modal__fade-in");
 }
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  modal.classList.remove("modal__fade-in");
-  modal.classList.add("modal__fade-out");
-
 }
 //function to apply user input on PROFILE EDIT form to profile
 function editFormSubmit(evt) {
@@ -116,6 +112,15 @@ function newPostSubmit(evt){
     cardList.prepend(newPost);
     closeModal(newPostModal);
 }
+//event listeners
+
+//reviewer suggested universal close btn handler that I couldnt get to work but will try again
+// const closeButtons = document.querySelectorAll(".modal__close");
+// closeButtons.forEach((button) => {
+//   const popup = button.closest(".modal");
+//   button.addEventListener("click", () => {
+//     closeModal(popup));
+//   });
 
 //event listeners for profile edit
 profileEditBtn.addEventListener("click", () =>{
@@ -124,7 +129,7 @@ profileEditBtn.addEventListener("click", () =>{
   openModal(editModal);
 });
 editModalCloseBtn.addEventListener("click", () => {
-  editModal.classList.add("modal__fade-out");
+
   closeModal(editModal);
 });
 editForm.addEventListener("submit", editFormSubmit);
@@ -135,8 +140,6 @@ newPostBtn.addEventListener("click", () => {
 });
 
 newPostCloseBtn.addEventListener("click", () => {
-  newPostModal.classList.add("modal__fade-out");
-
   closeModal(newPostModal);
 });
 
@@ -144,7 +147,6 @@ newPostForm.addEventListener("submit", newPostSubmit);
 //event listeners for preview modal
 
 previewCloseBtn.addEventListener("click", () => {
-  previewModal.classList.add("modal__fade-out");
   closeModal(previewModal);
 })
 //runs on page load
