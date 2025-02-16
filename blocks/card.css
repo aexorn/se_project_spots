@@ -39,7 +39,9 @@
 }
 
 .card__delete{
-  background: url('../images/delete-icon.svg');
+  background: url('../images/svgdel.svg');
+  background-color: transparent;
+  border: none;
   height: 32px;
   width: 32px;
   top: 42px;
@@ -48,8 +50,13 @@
   cursor: pointer;
 }
 .card__delete:hover{
+<<<<<<< HEAD
   background: url('../images/delete-hover.svg');
 }
+=======
+  background: url('../images/delete-hover.svg');}
+
+>>>>>>> be03763 (fix: delete icon;)
 /* .card__image:hover {
 Width: 446.43px;
 Height: 661px;
@@ -110,9 +117,13 @@ Height: 661px;
   border: none;
   background-color: transparent;
   opacity: 1;
+
+}
+.card__like_liked:on-focus {
   animation: grow-heart 1s 1 ease;
   cursor: pointer;
 }
+
 
 .card__like_liked:hover{
 transition: scale(1.25) 1s 1 ease-in-out;
