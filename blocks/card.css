@@ -50,13 +50,8 @@
   cursor: pointer;
 }
 .card__delete:hover{
-<<<<<<< HEAD
   background: url('../images/delete-hover.svg');
 }
-=======
-  background: url('../images/delete-hover.svg');}
-
->>>>>>> be03763 (fix: delete icon;)
 /* .card__image:hover {
 Width: 446.43px;
 Height: 661px;
@@ -117,17 +112,18 @@ Height: 661px;
   border: none;
   background-color: transparent;
   opacity: 1;
+  /* transition: scale(1.25) 1s 1 ease-in-out;
 
 }
-.card__like_liked:on-focus {
+.card__like_liked:AFTER{
   animation: grow-heart 1s 1 ease;
-  cursor: pointer;
+  cursor: pointer
 }
 
 
 .card__like_liked:hover{
-transition: scale(1.25) 1s 1 ease-in-out;
-  }
+transform: scale (1.25);
+  } */
 @media screen and (max-width: 1005px) {
   .card__delete{
     top: 41px;
@@ -188,6 +184,6 @@ top: 41px;
  @media screen and (max-width: 320px) {
   .modal{
     padding: auto 16px;
-  }
+   }
 
- }
+ }}
