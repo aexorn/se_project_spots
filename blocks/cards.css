@@ -24,11 +24,9 @@
     gap: 20px;
   }
 }
-@media screen and (max-width: 1005px) {
+/* @media screen and (max-width: 1005px) {
   .cards {9005
-
-
-}
+} */
 @media screen and (max-width: 774px) {
   .cards {
     max-width: 742;
