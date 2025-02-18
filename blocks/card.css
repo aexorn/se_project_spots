@@ -3,7 +3,7 @@
     opacity: 1;
     transform: scale(1);
   }
-/* 25% {
+  /* 25% {
     transform: scale(1.5);
   } */
   90% {
@@ -14,10 +14,10 @@
   }
 }
 @keyframes hover-heart {
-  from{
+  from {
     transform: scale(1);
   }
-  to{
+  to {
     transform: scale(1.5);
   }
 }
@@ -38,8 +38,8 @@
   cursor: pointer;
 }
 
-.card__delete{
-  background: url('../images/svgdel.svg');
+.card__delete {
+  background: url("../images/svgdel.svg");
   background-color: transparent;
   border: none;
   height: 32px;
@@ -49,8 +49,8 @@
   position: relative;
   cursor: pointer;
 }
-.card__delete:hover{
-  background: url('../images/delete-hover.svg');
+.card__delete:hover {
+  background: url("../images/delete-hover.svg");
 }
 /* .card__image:hover {
 Width: 446.43px;
@@ -101,7 +101,6 @@ Height: 661px;
 .card__like:active {
   background-image: url("../images/like-State=OnClick.svg");
   opacity: 1;
-
 }
 
 .card__like_liked {
@@ -112,7 +111,8 @@ Height: 661px;
   border: none;
   background-color: transparent;
   opacity: 1;
-  /* transition: scale(1.25) 1s 1 ease-in-out;
+}
+/* transition: scale(1.25) 1s 1 ease-in-out;
 
 }
 .card__like_liked:AFTER{
@@ -125,11 +125,10 @@ Height: 661px;
 transform: scale (1.25);
   } */
 @media screen and (max-width: 1005px) {
-  .card__delete{
+  .card__delete {
     top: 41px;
     left: 371px;
   }
-
 }
 @media screen and (max-width: 774px) {
   .card {
@@ -140,10 +139,10 @@ transform: scale (1.25);
     line-height: 1;
     font-weight: 500;
   }
-.card__delete{
-left: 246px;
-top: 41px;
-}
+  .card__delete {
+    left: 246px;
+    top: 41px;
+  }
   .card__image {
     width: 288px;
     height: 288px;
@@ -170,7 +169,7 @@ top: 41px;
     height: 318px;
   }
 
-  .card__delete{
+  .card__delete {
     top: 42px;
     left: 247px;
   }
@@ -179,11 +178,9 @@ top: 41px;
     width: 288px;
     height: 288px;
   }
-
 }
- @media screen and (max-width: 320px) {
-  .modal{
+@media screen and (max-width: 320px) {
+  .modal {
     padding: auto 16px;
-   }
-
- }}
+  }
+}

@@ -22,9 +22,7 @@
   .page {
     padding: 0 16px;
   }
-  .page__section {
-    max-width: 6px;
-  }
+
 }
 
 @media screen and (max-width: 320px) {
