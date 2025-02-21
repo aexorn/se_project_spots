@@ -95,7 +95,7 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 //function to apply user input on PROFILE EDIT form to profile
-function editFormSubmit(evt) {
+function submitEditForm(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
@@ -132,7 +132,7 @@ editModalCloseBtn.addEventListener("click", () => {
 
   closeModal(editModal);
 });
-editForm.addEventListener("submit", editFormSubmit);
+editForm.addEventListener("submit", submitEditForm);
 
 //event listeners for new post
 newPostBtn.addEventListener("click", () => {
