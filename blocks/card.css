@@ -180,7 +180,9 @@ transform: scale (1.25);
   }
 }
 @media screen and (max-width: 320px) {
-  .modal {
-    padding: auto 16px;
+
+  .card__image {
+    width: 288px;
+    height: 288px;
   }
 }

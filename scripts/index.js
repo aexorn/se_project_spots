@@ -45,7 +45,7 @@ const editModalCloseBtn = editModal.querySelector(".modal__close");
 const newPostBtn = document.querySelector(".profile__add-new");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostForm= newPostModal.querySelector(".modal__form");
-const newPostCaptionInput = newPostModal.querySelector("#new-caption-input");
+const newPostCaptionInput = newPostModal.querySelector("#new-image-caption-input");
 const newPostURLInput = newPostModal.querySelector("#new-image-input");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close");
 //for preview modal
@@ -102,7 +102,7 @@ function editFormSubmit(evt) {
   closeModal(editModal);
 }
 //function to apply user input on NEW POST form
-function newPostSubmit(evt){
+function submitNewPost(evt){
   evt.preventDefault();
   const newPostInputs = {
     name: newPostCaptionInput.value,
@@ -143,8 +143,7 @@ newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
-newPostForm.addEventListener("submit", newPostSubmit);
-//event listeners for preview modal
+newPostForm.addEventListener("submit", submitNewPost);//event listeners for preview modal
 
 previewCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);

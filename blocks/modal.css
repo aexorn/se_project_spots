@@ -209,9 +209,12 @@
 
 }
 @media screen and (max-width: 320px) {
-  .modal{
-    padding: 0;
+  .modal {
+    padding: auto 16px;
   }
+  /* .modal{
+    padding: 0;
+  } */
   .modal__container{
     width: 300px;
     height: fit-content;
