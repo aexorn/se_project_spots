@@ -37,14 +37,14 @@ const profileEditBtn = document.querySelector(".profile__edit");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__subtitle");
 const editModal = document.querySelector("#edit-modal");
-const editForm = editModal.querySelector(".modal__form");
+const editForm = document.forms["edit-profile-form"];
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector("#profile-description-input");
 const editModalCloseBtn = editModal.querySelector(".modal__close");
 //for new post modal
 const newPostBtn = document.querySelector(".profile__add-new");
 const newPostModal = document.querySelector("#new-post-modal");
-const newPostForm= newPostModal.querySelector(".modal__form");
+const newPostForm= document.forms["new-post-form"];
 const newPostCaptionInput = newPostModal.querySelector("#new-image-caption-input");
 const newPostURLInput = newPostModal.querySelector("#new-image-input");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close");
@@ -99,6 +99,7 @@ function submitEditForm(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
+  evt.target.reset();
   closeModal(editModal);
 }
 //function to apply user input on NEW POST form
@@ -108,9 +109,10 @@ function submitNewPost(evt){
     name: newPostCaptionInput.value,
     link: newPostURLInput.value
     }
-    const newPost = getCardElement(newPostInputs);
-    cardList.prepend(newPost);
-    closeModal(newPostModal);
+  const newPost = getCardElement(newPostInputs);
+  cardList.prepend(newPost);
+  evt.target.reset();
+  // closeModal(newPostModal);
 }
 //event listeners
 
