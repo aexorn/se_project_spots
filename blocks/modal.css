@@ -62,14 +62,14 @@ position: relative;
   width: 40px;
   height: 40px;
   border: none;
-  background-image: url("../images/close-Icon.svg");
+  background-image: url("../images/modal-close-Icon.svg");
   background-color: transparent;
   cursor: pointer;
 
 }
 
 .modal__close_preview{
-  background: url("../images/close-preview.svg");
+  background: url("../images/modal-close-preview.svg");
 
   top: 0;
   right: -45px;
@@ -78,7 +78,7 @@ position: relative;
 
 }
 .modal__close:hover{
-  background-image: url("../images/close-hover.svg");
+  background-image: url("../images/modal-close-hover.svg");
 }
 
 .modal__title {

@@ -39,7 +39,7 @@
 }
 
 .card__delete {
-  background: url("../images/svgdel.svg");
+  background: url("../images/delete-card-icon.svg");
   background-color: transparent;
   border: none;
   height: 32px;
@@ -50,7 +50,7 @@
   cursor: pointer;
 }
 .card__delete:hover {
-  background: url("../images/delete-hover.svg");
+  background: url("../images/delete-card-icon-hover.svg");
 }
 /* .card__image:hover {
 Width: 446.43px;
@@ -83,7 +83,7 @@ Height: 661px;
 }
 /*on gh pages my like button displays properly on all cards but from liveServer the third card displays it on a different line and I don't understand why can you help me with that ?*/
 .card__like {
-  background-image: url("../images/like-State=Hover.svg");
+  background-image: url("../images/like.svg");
   background-repeat: no-repeat;
   width: 23px;
   height: 20px;
@@ -100,12 +100,12 @@ Height: 661px;
 
 /*change this to cick event listener when js is legal*/
 .card__like:active {
-  background-image: url("../images/like-State=OnClick.svg");
+  background-image: url("../images/like-active.svg");
   opacity: 1;
 }
 
 .card__like_liked {
-  background-image: url("../images/like-State=Liked.svg");
+  background-image: url("../images/like-liked.svg");
   width: 23px;
   width: 23px;
   height: 20px;

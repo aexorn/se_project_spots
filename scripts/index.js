@@ -87,6 +87,10 @@ function getCardElement(data) {
   return card;
 }
 
+// function renderCard(item, method = "prepend") {
+//   const card = getCardElement(item);
+//   cardList[method](card);
+// }
 //general modal functions
 function openModal(modal){
 modal.classList.add("modal_opened");
@@ -112,17 +116,19 @@ function submitNewPost(evt){
   const newPost = getCardElement(newPostInputs);
   cardList.prepend(newPost);
   evt.target.reset();
-  // closeModal(newPostModal);
+  //should I still close the modal here? or leave it open in case of multiple uploads?
+  closeModal(newPostModal);
 }
 //event listeners
 
 //reviewer suggested universal close btn handler that I couldnt get to work but will try again
-// const closeButtons = document.querySelectorAll(".modal__close");
-// closeButtons.forEach((button) => {
-//   const popup = button.closest(".modal");
-//   button.addEventListener("click", () => {
-//     closeModal(popup));
-//   });
+const closeButtons = document.querySelectorAll(".modal__close");
+closeButtons.forEach((button) => {
+  const popup = button.closest(".modal");
+  button.addEventListener("click", () => {
+    closeModal(popup);
+  });
+});
 
 //event listeners for profile edit
 profileEditBtn.addEventListener("click", () =>{
@@ -154,4 +160,4 @@ previewCloseBtn.addEventListener("click", () => {
 initialCards.forEach((cardItem )=> {
   const card = getCardElement(cardItem);
   cardList.append(card);
-});
+  });
