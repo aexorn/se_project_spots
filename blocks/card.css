@@ -116,7 +116,7 @@ Height: 661px;
 }
 /* transition: scale(1.25) 1s 1 ease-in-out;
 
-}
+
 .card__like_liked:AFTER{
   animation: grow-heart 1s 1 ease;
   cursor: pointer
