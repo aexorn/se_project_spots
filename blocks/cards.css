@@ -29,7 +29,7 @@
 } */
 @media screen and (max-width: 774px) {
   .cards {
-    max-width: 742;
+    max-width: 742px;
   }
   .cards__list {
     grid-template-columns: 288px 288px;
