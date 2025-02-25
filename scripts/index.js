@@ -30,8 +30,8 @@ const initialCards = [
     //alt: "a snow storm whips around an isolate rustic and weather worn cabin which is in stark contrast to the tall, powder caked aspens in the background"
   },
 ];
-//variable declarations in GLOBAL scope
-// const closeModalBtn = document.querySelector(".modal__close");
+//variable declarations in GLOBAL scope (note to self-don't do this in future, use a design pattern)
+const closeButtons = document.querySelectorAll('.modal__close');
 //for edit modal
 const profileEditBtn = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__title');
@@ -42,7 +42,7 @@ const editModalNameInput = editModal.querySelector('#profile-name-input');
 const editModalDescriptionInput = editModal.querySelector(
   '#profile-description-input'
 );
-const editModalCloseBtn = editModal.querySelector('.modal__close');
+
 //for new post modal
 const newPostBtn = document.querySelector('.profile__add-new');
 const newPostModal = document.querySelector('#new-post-modal');
@@ -51,12 +51,10 @@ const newPostCaptionInput = newPostModal.querySelector(
   '#new-image-caption-input'
 );
 const newPostURLInput = newPostModal.querySelector('#new-image-input');
-const newPostCloseBtn = newPostModal.querySelector('.modal__close');
 //for preview modal
 const previewModal = document.querySelector('#preview-modal');
 const previewImg = previewModal.querySelector('.modal__image');
 const previewCaption = previewModal.querySelector('.modal__caption');
-const previewCloseBtn = previewModal.querySelector('.modal__close_preview');
 //for card
 const cardTemplate = document.querySelector('#card-template');
 const cardList = document.querySelector('.cards__list');
@@ -88,10 +86,10 @@ function getCardElement(data) {
   return card;
 }
 
-// function renderCard(item, method = "prepend") {
-//   const card = getCardElement(item);
-//   cardList[method](card);
-// }
+function renderCard(item, method = 'append') {
+  const card = getCardElement(item);
+  cardList[method](card);
+}
 //general modal functions
 function openModal(modal) {
   modal.classList.add('modal_opened');
@@ -122,8 +120,7 @@ function submitNewPost(evt) {
 }
 //event listeners
 
-//reviewer suggested universal close btn handler that I couldnt get to work but will try again
-const closeButtons = document.querySelectorAll('.modal__close');
+//universal close btn handler
 closeButtons.forEach(button => {
   const popup = button.closest('.modal');
   button.addEventListener('click', () => {
@@ -137,9 +134,7 @@ profileEditBtn.addEventListener('click', () => {
   editModalDescriptionInput.value = profileDescription.textContent;
   openModal(editModal);
 });
-editModalCloseBtn.addEventListener('click', () => {
-  closeModal(editModal);
-});
+
 editForm.addEventListener('submit', submitEditForm);
 
 //event listeners for new post
@@ -147,17 +142,9 @@ newPostBtn.addEventListener('click', () => {
   openModal(newPostModal);
 });
 
-newPostCloseBtn.addEventListener('click', () => {
-  closeModal(newPostModal);
-});
-
 newPostForm.addEventListener('submit', submitNewPost); //event listeners for preview modal
 
-previewCloseBtn.addEventListener('click', () => {
-  closeModal(previewModal);
-});
 //runs on page load
 initialCards.forEach(cardItem => {
-  const card = getCardElement(cardItem);
-  cardList.append(card);
+  renderCard(cardItem);
 });
