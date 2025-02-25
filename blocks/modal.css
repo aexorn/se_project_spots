@@ -63,7 +63,6 @@
 
 .modal__close_preview {
   background: url('../images/modal-close-preview.svg');
-
   top: 0;
   right: -45px;
 }

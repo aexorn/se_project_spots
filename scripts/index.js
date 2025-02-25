@@ -30,9 +30,11 @@ const initialCards = [
     //alt: "a snow storm whips around an isolate rustic and weather worn cabin which is in stark contrast to the tall, powder caked aspens in the background"
   },
 ];
-//variable declarations in GLOBAL scope (note to self-don't do this in future, use a design pattern)
+
+// Variable declarations in GLOBAL scope (note to self-don't do this in future, use a design pattern)
 const closeButtons = document.querySelectorAll('.modal__close');
-//for edit modal
+
+// For edit modal
 const profileEditBtn = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__subtitle');
@@ -43,7 +45,7 @@ const editModalDescriptionInput = editModal.querySelector(
   '#profile-description-input'
 );
 
-//for new post modal
+// For new post modal
 const newPostBtn = document.querySelector('.profile__add-new');
 const newPostModal = document.querySelector('#new-post-modal');
 const newPostForm = document.forms['new-post-form'];
@@ -51,15 +53,17 @@ const newPostCaptionInput = newPostModal.querySelector(
   '#new-image-caption-input'
 );
 const newPostURLInput = newPostModal.querySelector('#new-image-input');
-//for preview modal
+
+// For preview modal
 const previewModal = document.querySelector('#preview-modal');
 const previewImg = previewModal.querySelector('.modal__image');
 const previewCaption = previewModal.querySelector('.modal__caption');
-//for card
+
+// For card
 const cardTemplate = document.querySelector('#card-template');
 const cardList = document.querySelector('.cards__list');
 
-//function to generate cards according to template id'd 'card-template'
+// Function to generate cards according to template id'd 'card-template'
 function getCardElement(data) {
   console.log(data);
   const card = cardTemplate.content.querySelector('.card').cloneNode(true);
@@ -90,14 +94,17 @@ function renderCard(item, method = 'append') {
   const card = getCardElement(item);
   cardList[method](card);
 }
-//general modal functions
+
+// General modal functions
 function openModal(modal) {
   modal.classList.add('modal_opened');
 }
+
 function closeModal(modal) {
   modal.classList.remove('modal_opened');
 }
-//function to apply user input on PROFILE EDIT form to profile
+
+// Function to apply user input on PROFILE EDIT form to profile
 function submitEditForm(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
@@ -105,7 +112,8 @@ function submitEditForm(evt) {
   evt.target.reset();
   closeModal(editModal);
 }
-//function to apply user input on NEW POST form
+
+// Function to apply user input on NEW POST form
 function submitNewPost(evt) {
   evt.preventDefault();
   const newPostInputs = {
@@ -115,12 +123,13 @@ function submitNewPost(evt) {
   const newPost = getCardElement(newPostInputs);
   cardList.prepend(newPost);
   evt.target.reset();
-  //should I still close the modal here? or leave it open in case of multiple uploads?
+  // Should I still close the modal here? Or leave it open in case of multiple uploads?
   closeModal(newPostModal);
 }
-//event listeners
 
-//universal close btn handler
+// Event listeners
+
+// Universal close btn handler
 closeButtons.forEach(button => {
   const popup = button.closest('.modal');
   button.addEventListener('click', () => {
@@ -128,7 +137,7 @@ closeButtons.forEach(button => {
   });
 });
 
-//event listeners for profile edit
+// Event listeners for profile edit
 profileEditBtn.addEventListener('click', () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
@@ -137,14 +146,14 @@ profileEditBtn.addEventListener('click', () => {
 
 editForm.addEventListener('submit', submitEditForm);
 
-//event listeners for new post
+// Event listeners for new post
 newPostBtn.addEventListener('click', () => {
   openModal(newPostModal);
 });
 
-newPostForm.addEventListener('submit', submitNewPost); //event listeners for preview modal
+newPostForm.addEventListener('submit', submitNewPost);
 
-//runs on page load
+// Runs on page load
 initialCards.forEach(cardItem => {
   renderCard(cardItem);
 });
