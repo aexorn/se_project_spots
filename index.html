@@ -78,7 +78,11 @@
                 class="modal__input"
                 name="profile-name-input"
                 placeholder="Type your name"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span class="modal__error modal__error_visible"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -88,7 +92,11 @@
                 class="modal__input"
                 name="profile-description-input"
                 placeholder="Describe yourself"
+                required
+                minlength="2"
+                maxlength="200"
               />
+              <span class="modal__error modal__error_visible"></span>
             </label>
             <button type="submit" class="modal__submit">Save</button>
           </form>
@@ -109,7 +117,9 @@
                 class="modal__input"
                 name="new-image-input"
                 placeholder="https://example.com/image.jpg"
+                required
               />
+              <span class="modal__error modal__error_visible"></span>
             </label>
             <label for="new-image-caption-input" class="modal__label">
               Caption
@@ -119,7 +129,11 @@
                 class="modal__input"
                 name="new-image-caption-input"
                 placeholder="tell us about your image"
+                required
+                minlength="2"
+                maxlength="30"
               />
+              <span class="modal__error modal__error_visible"></span>
             </label>
             <button type="submit" class="modal__submit">Save</button>
           </form>

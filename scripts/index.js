@@ -44,6 +44,7 @@ const editModalNameInput = editModal.querySelector('#profile-name-input');
 const editModalDescriptionInput = editModal.querySelector(
   '#profile-description-input'
 );
+const modalOverlay = document.querySelector('.modal_opened');
 
 // For new post modal
 const newPostBtn = document.querySelector('.profile__add-new');
@@ -156,3 +157,8 @@ newPostForm.addEventListener('submit', submitNewPost);
 initialCards.forEach(cardItem => {
   renderCard(cardItem);
 });
+
+//event listener to click out o modal
+// modalOverlay.addEventListener('click', () => {
+//   closeModal(editModal);
+// })
