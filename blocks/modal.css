@@ -25,8 +25,8 @@
 
 .modal__container {
   background: rgba(255, 255, 255, 1);
-  padding: 32px 50px;
-  height: 408px;
+  padding: 32px 50px 46px;
+  height: fit-content;
   max-width: 730px;
   box-sizing: border-box;
   width: 100%;
@@ -101,6 +101,7 @@
   font-size: 16px;
   line-height: 17.6px;
   font-weight: 500;
+  margin-bottom: 32px;
 }
 
 .modal__error {
@@ -109,6 +110,7 @@
   font-weight: 500;
   font-size: 16px;
   color: rgba(255, 0, 0, 0.7);
+  margin-top: 8px;
 }
 
 .modal__error_visible {
@@ -120,7 +122,7 @@
   font-size: 20px;
   line-height: 1;
   margin-top: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 0px;
   border-radius: 8px;
   font-weight: 500;
 }
@@ -136,7 +138,7 @@
   border-radius: 8px;
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   cursor: pointer;
 }
 
