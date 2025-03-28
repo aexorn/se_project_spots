@@ -54,7 +54,7 @@ const newPostCaptionInput = newPostModal.querySelector(
   '#new-image-caption-input'
 );
 const newPostURLInput = newPostModal.querySelector('#new-image-input');
-
+const submitButton = document.querySelector('.modal__submit');
 // For preview modal
 const previewModal = document.querySelector('#preview-modal');
 const previewImg = previewModal.querySelector('.modal__image');
@@ -110,6 +110,7 @@ function submitEditForm(evt) {
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
   evt.target.reset();
+  toggleButtonState(inputList, submitButton, settings);
   closeModal(editModal);
 }
 
@@ -123,7 +124,7 @@ function submitNewPost(evt) {
   const newPost = getCardElement(newPostInputs);
   cardList.prepend(newPost);
   evt.target.reset();
-  // Should I still close the modal here? Or leave it open in case of multiple uploads?
+  disableButton(submitButton, settings);
   closeModal(newPostModal);
 }
 
@@ -149,6 +150,7 @@ editForm.addEventListener('submit', submitEditForm);
 // Event listeners for new post
 newPostBtn.addEventListener('click', () => {
   openModal(newPostModal);
+  toggleButtonState(inputList, submitButton, settings);                           
 });
 
 newPostForm.addEventListener('submit', submitNewPost);
@@ -158,7 +160,7 @@ initialCards.forEach(cardItem => {
   renderCard(cardItem);
 });
 
-//event listener to click out o modal
+//event listener to click out of modal
 // modalOverlay.addEventListener('click', () => {
 //   closeModal(editModal);
 // })

@@ -82,7 +82,7 @@
                 minlength="2"
                 maxlength="40"
               />
-              <span class="modal__error"></span>
+              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -96,7 +96,10 @@
                 minlength="2"
                 maxlength="200"
               />
-              <span class="modal__error"></span>
+              <span
+                id="profile-description-input-error"
+                class="modal__error"
+              ></span>
             </label>
             <button type="submit" class="modal__submit">Save</button>
           </form>
@@ -119,7 +122,7 @@
                 placeholder="https://example.com/image.jpg"
                 required
               />
-              <span class="modal__error"></span>
+              <span id="new-image-input-error" class="modal__error"></span>
             </label>
             <label for="new-image-caption-input" class="modal__label">
               Caption
@@ -133,7 +136,10 @@
                 minlength="2"
                 maxlength="30"
               />
-              <span class="modal__error"></span>
+              <span
+                id="new-image-caption-input-error"
+                class="modal__error"
+              ></span>
             </label>
             <button type="submit" class="modal__submit">Save</button>
           </form>
@@ -150,7 +156,7 @@
         </div>
       </div>
     </div>
-    <script defer src="./scripts/validation.js"></script>
+    <script defer src="./scripts/validate.js"></script>
     <script defer src="./scripts/index.js"></script>
-  </body>
+    </body>
 </html>

@@ -104,31 +104,32 @@
   margin-bottom: 32px;
 }
 
-.modal__error {
-  visibility: hidden;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: rgba(255, 0, 0, 0.7);
-  margin-top: 8px;
-}
-
-.modal__error_visible {
-  visibility: visible;
-}
 .modal__input {
   padding-left: 12px;
   height: 52px;
   font-size: 20px;
   line-height: 1;
   margin-top: 8px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   border-radius: 8px;
   font-weight: 500;
 }
 
 .modal__input_error {
   border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+/* .modal__input_error:focus {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+//still not turning red until loss of focus (also tried mouseove, focus-within, active, hover, focus-visible, target */
+
+.modal__error {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+  color: rgba(255, 0, 0, 0.7);
+  margin-top: 8px;
 }
 
 .modal__submit {
@@ -143,7 +144,7 @@
 }
 
 .modal__submit_disabled {
-  background-color: rgba(33, 33, 33, 1);
+  background-color: rgba(33, 33, 33, 0.8);
   cursor: default;
 }
 
@@ -159,7 +160,7 @@
   }
 
   .modal__container {
-    height: 336px;
+    height: fit-content;
     width: 300px;
     padding: 22px 12px 12px;
     gap: 24px;
@@ -175,16 +176,16 @@
     cursor: pointer;
   }
   .modal__label {
-    margin-bottom: 0px;
+    margin-bottom: 24px;
   }
   .modal__input {
     height: 48px;
     border-radius: 8px;
     font-size: 16px;
     margin-top: 8px;
-    margin-bottom: 24px;
     padding-left: 12px;
   }
+
   .modal__close {
     top: 12px;
     right: 12px;
