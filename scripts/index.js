@@ -63,7 +63,11 @@ const previewCaption = previewModal.querySelector('.modal__caption');
 // For card
 const cardTemplate = document.querySelector('#card-template');
 const cardList = document.querySelector('.cards__list');
-
+//validation declarations
+const inputList = document.querySelectorAll('.modal__input'); //are declarations in the global scope
+//of this file also accessible to validate.js? is declaring this var in global and in setEventListeners
+//problematic for any reason ?
+//-------------------
 // Function to generate cards according to template id'd 'card-template'
 function getCardElement(data) {
   console.log(data);
@@ -150,7 +154,7 @@ editForm.addEventListener('submit', submitEditForm);
 // Event listeners for new post
 newPostBtn.addEventListener('click', () => {
   openModal(newPostModal);
-  toggleButtonState(inputList, submitButton, settings);                           
+  toggleButtonState(inputList, submitButton, settings);
 });
 
 newPostForm.addEventListener('submit', submitNewPost);

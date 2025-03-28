@@ -5,6 +5,7 @@ const settings = {
   inactiveButtonClass: 'modal__submit_disabled',
   inputErrorClass: 'modal__input_error',
   errorClass: 'modal__error',
+  //should inputList be part of this object/ can I qselectall 'inputSelector'?
 };
 
 const showInputError = (form, input, errorMessage, config) => {
