@@ -103,13 +103,30 @@ function renderCard(item, method = 'append') {
 }
 
 // General modal functions
+
+function handleEsc(evt, modal) {
+  if (evt.key === 'Escape') {
+    closeModal(modal);
+  }
+}
 function openModal(modal) {
+  const handleEscWithModal = evt => handleEsc(evt, modal);
+  document.addEventListener('keydown', handleEscWithModal);
+
+  modal.addEventListener('click', evt => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+
   modal.classList.add('modal_opened');
 }
 
 function closeModal(modal) {
   modal.classList.remove('modal_opened');
+  document.removeEventListener('keydown', handleEsc);
 }
+
 // Function to apply user input on PROFILE EDIT form to profile
 function submitEditForm(evt) {
   evt.preventDefault();
@@ -166,11 +183,15 @@ initialCards.forEach(cardItem => {
 });
 
 //event listener to click out of modal
-// modals.forEach(modal => {
-//   modal.addEventListener('click', () => {
-//     modal.classList.remove(modal_opened);
-//   });
-//});
+modals.forEach(modal => {
+  if (modal.classList.contains('modal_opened')) {
+    modal.addEventListener('click', () => {
+      if (evt.target.classList.contains('modal_opened')) {
+        closeModal(modal);
+      }
+    });
+  }
+});
 //use evt.target to do this instead
 modals.forEach(modal => {
   modal.addEventListener('keydown', evt => {
