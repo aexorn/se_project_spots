@@ -33,7 +33,8 @@ const initialCards = [
 
 // Variable declarations in GLOBAL scope (note to self-don't do this in future, use a design pattern)
 const closeButtons = document.querySelectorAll('.modal__close');
-
+const modalOverlay = document.querySelector('.modal_opened');
+const modals = document.querySelectorAll('.modal');
 // For edit modal
 const profileEditBtn = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__title');
@@ -44,7 +45,6 @@ const editModalNameInput = editModal.querySelector('#profile-name-input');
 const editModalDescriptionInput = editModal.querySelector(
   '#profile-description-input'
 );
-const modalOverlay = document.querySelector('.modal_opened');
 
 // For new post modal
 const newPostBtn = document.querySelector('.profile__add-new');
@@ -55,6 +55,8 @@ const newPostCaptionInput = newPostModal.querySelector(
 );
 const newPostURLInput = newPostModal.querySelector('#new-image-input');
 const submitButton = document.querySelector('.modal__submit');
+const editSubmitButton = document.querySelector('#submit_edit');
+const newPostSubmitButton = document.querySelector('#submit_new');
 // For preview modal
 const previewModal = document.querySelector('#preview-modal');
 const previewImg = previewModal.querySelector('.modal__image');
@@ -64,7 +66,8 @@ const previewCaption = previewModal.querySelector('.modal__caption');
 const cardTemplate = document.querySelector('#card-template');
 const cardList = document.querySelector('.cards__list');
 //validation declarations
-const inputList = document.querySelectorAll('.modal__input'); //are declarations in the global scope
+
+//are declarations in the global scope
 //of this file also accessible to validate.js? is declaring this var in global and in setEventListeners
 //problematic for any reason ?
 //-------------------
@@ -107,14 +110,13 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove('modal_opened');
 }
-
 // Function to apply user input on PROFILE EDIT form to profile
 function submitEditForm(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
   evt.target.reset();
-  toggleButtonState(inputList, submitButton, settings);
+  disableButton(editSubmitButton, settings);
   closeModal(editModal);
 }
 
@@ -154,7 +156,6 @@ editForm.addEventListener('submit', submitEditForm);
 // Event listeners for new post
 newPostBtn.addEventListener('click', () => {
   openModal(newPostModal);
-  toggleButtonState(inputList, submitButton, settings);
 });
 
 newPostForm.addEventListener('submit', submitNewPost);
@@ -165,6 +166,16 @@ initialCards.forEach(cardItem => {
 });
 
 //event listener to click out of modal
-// modalOverlay.addEventListener('click', () => {
-//   closeModal(editModal);
-// })
+// modals.forEach(modal => {
+//   modal.addEventListener('click', () => {
+//     modal.classList.remove(modal_opened);
+//   });
+//});
+//use evt.target to do this instead
+modals.forEach(modal => {
+  modal.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') {
+      closeModal(modal);
+    }
+  });
+});

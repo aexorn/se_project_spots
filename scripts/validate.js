@@ -44,6 +44,7 @@ const toggleButtonState = (inputList, submitButton, config) => {
     submitButton.disabled = false;
   }
 };
+//bc I'm calling and declaring this function simultaneously  would I later be able to call it again with a diff btn?
 const disableButton = (button, config) => {
   button.disabled = true;
   button.classList.add(config.inactiveButtonClass);
