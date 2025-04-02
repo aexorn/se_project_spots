@@ -33,7 +33,7 @@ const initialCards = [
 
 // Variable declarations in GLOBAL scope (note to self-don't do this in future, use a design pattern)
 const closeButtons = document.querySelectorAll('.modal__close');
-const modalOverlay = document.querySelector('.modal_opened');
+const openedPopup = document.querySelector('.modal_opened');
 const modals = document.querySelectorAll('.modal');
 // For edit modal
 const profileEditBtn = document.querySelector('.profile__edit');
@@ -65,13 +65,7 @@ const previewCaption = previewModal.querySelector('.modal__caption');
 // For card
 const cardTemplate = document.querySelector('#card-template');
 const cardList = document.querySelector('.cards__list');
-//validation declarations
 
-//are declarations in the global scope
-//of this file also accessible to validate.js? is declaring this var in global and in setEventListeners
-//problematic for any reason ?
-//-------------------
-// Function to generate cards according to template id'd 'card-template'
 function getCardElement(data) {
   console.log(data);
   const card = cardTemplate.content.querySelector('.card').cloneNode(true);
@@ -106,11 +100,11 @@ function renderCard(item, method = 'append') {
 
 function handleEsc(evt, modal) {
   if (evt.key === 'Escape') {
-    closeModal(modal);
+    const openedPopup = document.querySelector('.modal_opened');
+    closeModal(openedPopup);
   }
 }
 function openModal(modal) {
-  const handleEscWithModal = evt => handleEsc(evt, modal);
   document.addEventListener('keydown', handleEscWithModal);
 
   modal.addEventListener('click', evt => {
@@ -123,8 +117,8 @@ function openModal(modal) {
 }
 
 function closeModal(modal) {
-  modal.classList.remove('modal_opened');
   document.removeEventListener('keydown', handleEsc);
+  modal.classList.remove('modal_opened');
 }
 
 // Function to apply user input on PROFILE EDIT form to profile
@@ -144,8 +138,7 @@ function submitNewPost(evt) {
     name: newPostCaptionInput.value,
     link: newPostURLInput.value,
   };
-  const newPost = getCardElement(newPostInputs);
-  cardList.prepend(newPost);
+  renderCard(newPostInputs, 'prepend');
   evt.target.reset();
   disableButton(submitButton, settings);
   closeModal(newPostModal);
@@ -184,19 +177,10 @@ initialCards.forEach(cardItem => {
 
 //event listener to click out of modal
 modals.forEach(modal => {
-  if (modal.classList.contains('modal_opened')) {
-    modal.addEventListener('click', () => {
-      if (evt.target.classList.contains('modal_opened')) {
-        closeModal(modal);
-      }
-    });
-  }
-});
-//use evt.target to do this instead
-modals.forEach(modal => {
-  modal.addEventListener('keydown', evt => {
-    if (evt.key === 'Escape') {
+  modal.addEventListener('click', () => {
+    if (evt.target.classList.contains('modal_opened')) {
       closeModal(modal);
     }
   });
 });
+//use evt.target to do this instead

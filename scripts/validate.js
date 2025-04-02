@@ -37,11 +37,12 @@ const hasInvalidInput = (inputList, config) => {
 const toggleButtonState = (inputList, submitButton, config) => {
   console.log(hasInvalidInput(inputList, config));
   if (hasInvalidInput(inputList, config)) {
-    submitButton.classList.add(config.inactiveButtonClass);
+   disableButton(submitButton, config);
     submitButton.disabled = true;
   } else {
     submitButton.classList.remove(config.inactiveButtonClass);
     submitButton.disabled = false;
+
   }
 };
 //bc I'm calling and declaring this function simultaneously  would I later be able to call it again with a diff btn?
@@ -52,13 +53,16 @@ const disableButton = (button, config) => {
 
 const resetValidation = (form, inputlist, config) => {
   inputlist.forEach(input => {
-    hideInputError(form, input);
+    hideInputError(form, input, config);
   });
 };
 const setEventListeners = (form, config) => {
   const inputList = Array.from(form.querySelectorAll(config.inputSelector));
   const submitButton = form.querySelector(config.submitButtonSelector);
   toggleButtonState(inputList, submitButton, config);
+  form.addEventListener("reset", () => {
+    disableButton(submitButton, config);
+  });
   inputList.forEach(input => {
     input.addEventListener('input', function () {
       checkInputValidity(form, input, config);
