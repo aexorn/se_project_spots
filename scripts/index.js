@@ -98,27 +98,25 @@ function renderCard(item, method = 'append') {
 
 // General modal functions
 
-function handleEsc(evt, modal) {
+function handleEsc(evt, popup) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.modal_opened');
     closeModal(openedPopup);
   }
 }
 function openModal(modal) {
-  document.addEventListener('keydown', handleEscWithModal);
-
+  modal.classList.add('modal_opened');
+  document.addEventListener('keydown', handleEsc);
   modal.addEventListener('click', evt => {
     if (evt.target === modal) {
       closeModal(modal);
     }
   });
-
-  modal.classList.add('modal_opened');
 }
 
 function closeModal(modal) {
-  document.removeEventListener('keydown', handleEsc);
   modal.classList.remove('modal_opened');
+  document.removeEventListener('keydown', handleEsc);
 }
 
 // Function to apply user input on PROFILE EDIT form to profile
@@ -177,10 +175,9 @@ initialCards.forEach(cardItem => {
 
 //event listener to click out of modal
 modals.forEach(modal => {
-  modal.addEventListener('click', () => {
+  modal.addEventListener('click', evt => {
     if (evt.target.classList.contains('modal_opened')) {
       closeModal(modal);
     }
   });
 });
-//use evt.target to do this instead
