@@ -98,7 +98,7 @@ function renderCard(item, method = 'append') {
 
 // General modal functions
 
-function handleEsc(evt, popup) {
+function handleEsc(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.modal_opened');
     closeModal(openedPopup);
@@ -107,11 +107,6 @@ function handleEsc(evt, popup) {
 function openModal(modal) {
   modal.classList.add('modal_opened');
   document.addEventListener('keydown', handleEsc);
-  modal.addEventListener('click', evt => {
-    if (evt.target === modal) {
-      closeModal(modal);
-    }
-  });
 }
 
 function closeModal(modal) {
@@ -125,7 +120,6 @@ function submitEditForm(evt) {
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
   evt.target.reset();
-  disableButton(editSubmitButton, settings);
   closeModal(editModal);
 }
 
@@ -156,6 +150,11 @@ closeButtons.forEach(button => {
 profileEditBtn.addEventListener('click', () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(
+    editForm,
+    [editModalNameInput, editModalDescriptionInput],
+    settings
+  );
   openModal(editModal);
 });
 

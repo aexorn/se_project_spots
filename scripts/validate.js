@@ -5,7 +5,6 @@ const settings = {
   inactiveButtonClass: 'modal__submit_disabled',
   inputErrorClass: 'modal__input_error',
   errorClass: 'modal__error',
-  //should inputList be part of this object/ can I qselectall 'inputSelector'?
 };
 
 const showInputError = (form, input, errorMessage, config) => {
@@ -37,12 +36,10 @@ const hasInvalidInput = (inputList, config) => {
 const toggleButtonState = (inputList, submitButton, config) => {
   console.log(hasInvalidInput(inputList, config));
   if (hasInvalidInput(inputList, config)) {
-   disableButton(submitButton, config);
-    submitButton.disabled = true;
+    disableButton(submitButton, config);
   } else {
     submitButton.classList.remove(config.inactiveButtonClass);
     submitButton.disabled = false;
-
   }
 };
 //bc I'm calling and declaring this function simultaneously  would I later be able to call it again with a diff btn?
@@ -60,7 +57,7 @@ const setEventListeners = (form, config) => {
   const inputList = Array.from(form.querySelectorAll(config.inputSelector));
   const submitButton = form.querySelector(config.submitButtonSelector);
   toggleButtonState(inputList, submitButton, config);
-  form.addEventListener("reset", () => {
+  form.addEventListener('reset', () => {
     disableButton(submitButton, config);
   });
   inputList.forEach(input => {

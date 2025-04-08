@@ -89,7 +89,7 @@
     top: 5px;
   } */
 }
-
+/*adjust774 profile to suit two column design*/
 @media screen and (max-width: 774px) {
   .profile {
     max-width: 288px;
@@ -97,6 +97,7 @@
     padding-top: 20px;
     align-items: center;
     text-align: center;
+    border: none;
   }
 
   .profile__image {

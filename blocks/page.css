@@ -5,12 +5,12 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
-  padding: 0 80px;
+   padding: 0 /*80px; */
   min-width: 320px;
 }
 
 .page__section {
-  margin: 0 auto;
+  margin: 0 80px;
   max-width: 1280px;
 }
 @media screen and (max-width: 1438px) {
@@ -21,8 +21,11 @@
 
 @media screen and (max-width: 774px) {
   .page {
-    padding: 0 16px;
+    padding: 0;
   }
+.page__section{
+  margin: 0 20px;
+}
 }
 
 @media screen and (max-width: 320px) {
